@@ -1,6 +1,7 @@
 <?php namespace Paddons\Install\Commands;
 
 use Illuminate\Console\Command;
+use Artisan;
 
 class InstallCommand extends Command {
 
