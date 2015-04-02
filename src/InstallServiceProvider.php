@@ -1,7 +1,7 @@
-<?php
+<?php namespace Paddons\Install;
 
 use \Illuminate\Support\ServiceProvider;
-use Paddons\LaravelInstall\Commands\InstallCommand;
+use Paddons\Install\Commands\InstallCommand;
 
 class InstallServiceProvider extends ServiceProvider {
 

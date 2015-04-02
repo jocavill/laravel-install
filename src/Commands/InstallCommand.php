@@ -1,4 +1,4 @@
-<?php namespace Paddons\LaravelInstall\Commands;
+<?php namespace Paddons\Install\Commands;
 
 use Illuminate\Console\Command;
 
