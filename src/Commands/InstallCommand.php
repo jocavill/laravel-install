@@ -38,9 +38,21 @@ class InstallCommand extends Command {
     {
         $this->info('Starting installation...');
 
-        //todo: drop all tables, then do simple migrate
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
 
-        Artisan::call('migrate:refresh');
+        $tables = DB::select('show tables');
+
+        $property = 'Tables_in_' . DB::getDatabaseName();
+
+        foreach($tables as $table) {
+            Schema::drop($table->$property);
+        }
+
+        $this->info('Tables dropped');
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
+
+        Artisan::call('migrate');
 
         $this->info('Tables migrated');
 
