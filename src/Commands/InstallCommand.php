@@ -2,6 +2,8 @@
 
 use Illuminate\Console\Command;
 use Artisan;
+use DB;
+use Schema;
 
 class InstallCommand extends Command {
 
